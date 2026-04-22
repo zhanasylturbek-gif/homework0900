@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      nav {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+      }
+      button {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .current {
+        display: none;
+      }
+      .hidden {
+        display: none;
+      }
+      .buttons {
+        display: none;
+      }
+      @media screen and (max-width: 500px) {
+        nav {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 40px;
+        }
+        .buttons {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2>Home</h2>
+      <h2>Contacts</h2>
+      <h2>About</h2>
+      <h2>Adress</h2>
+      <h2>Location</h2>
+    </nav>
+    <div class="buttons">
+      <button class="btn-burger current">
+        <img
+          class="btn-burger"
+          src="https://img.icons8.com/sf-regular/1200/menu.jpg"
+          width="40"
+          height="30"
+        />
+      </button>
+      <button class="btn-x">x</button>
+    </div>
+
+    <!-- <button class="x-button" style="width: 60px; height: 40px">X</button> -->
+    <script>
+      const btnBurger = document.querySelector(".btn-burger");
+      const btnX = document.querySelector(".btn-x");
+      const nav = document.querySelector("nav");
+      btnBurger.addEventListener("click", function () {
+        btnX.classList.toggle("current");
+        btnBurger.classList.toggle("current");
+        nav.classList.toggle("hidden");
+      });
+      btnX.addEventListener("click", function () {
+        btnBurger.classList.toggle("current");
+        btnX.classList.toggle("current");
+        nav.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
